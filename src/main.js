@@ -7,10 +7,15 @@ import { fetchListData } from './api/api.js'
 
 Vue.config.productionTip = false
 
-function getTopItems () {
-  return fetchListData('top')
-    .then(items => items)
-}
+fetchListData('top')
+  .then((items) => {
+    window.items = items
+    new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  })
 
 /* new Vue({
   router,
@@ -18,11 +23,4 @@ function getTopItems () {
   render: h => h(App)
 }).$mount('#app') */
 
-getTopItems().then((items) => {
-  window.items = items
-  new Vue({
-    router,
-    store,
-    render: h => h(App)
-  }).$mount('#app')
-})
+

@@ -1,12 +1,9 @@
 <template>
-  <div >
-    <item/>
-  </div>
+  <item />
 </template>
 
 <script>
-import Item from '@/components/Item.vue'
-import api from '@/api/api.js'
+import Item from '../components/Item.vue'
 export default {
   components: {
     Item

@@ -1,11 +1,6 @@
 <template>
-    <div>{{item.url}} item </div>
+  <div>
+    item
+  </div>
 </template>
-<script>
-export default {
-    props:{
-        item:{}
-    }
-}
-</script>
 
