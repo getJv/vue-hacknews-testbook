@@ -1,5 +1,5 @@
 <template>
-    
+    <div>{{item.url}} item </div>
 </template>
 <script>
 export default {
