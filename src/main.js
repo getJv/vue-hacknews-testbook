@@ -17,7 +17,11 @@ fetchListData('top')
     }).$mount('#app')
   })
 
-/* new Vue({
+/* 
+
+
+
+new Vue({
   router,
   store,
   render: h => h(App)
