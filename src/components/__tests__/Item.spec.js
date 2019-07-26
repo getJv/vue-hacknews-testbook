@@ -32,9 +32,15 @@ describe('Item.vue', () => {
       expect(wrapper.text()).toContain(item.score)
     }),
 
-    it('Apresentou o título como um link', () => {
-      //expect(wrapper.text()).toContain(item.score)
+    it('Apresentou o título como um link para a url', () => {
+      const a = wrapper.find('a') 
+
+      expect(a.attributes().href).toBe(item.url)
+      expect(a.text()).toContain(item.title)
+    
     })
+
+    
 
 
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    Componente do item
+    Componente do item a
     <ul>
-        <li>{{item.title}}</li>
+        <li><a :href="item.url">{{item.title}}</a></li>
         <li>{{item.url}}</li>
         <li>{{item.score}}</li>
         <li>{{item.author}}</li> 
