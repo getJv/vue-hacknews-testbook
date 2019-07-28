@@ -18,9 +18,6 @@ fetchListData('top')
   })
 
 /* 
-
-
-
 new Vue({
   router,
   store,

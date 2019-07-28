@@ -10,26 +10,30 @@ describe('ItemList.vue', () => {
       author: 'Jhonatan Morais',
       score: 10,
       title: 'Site de notícias bobas'
-    },{
+    }, {
       url: 'https://www.cade.com.br',
       author: 'Jhonatan Morais',
       score: 1000,
       title: 'Saudoso site de Buscas'
     }
   ]
-  
+
   const wrapper = shallowMount(ItemList)
-  
+  const items = wrapper.findAll(Item)
 
-  it('Renderizou o componente', () => {
+  it('Renderização de componentes filhos', () => {
+    expect(items).toHaveLength(itemList.length)
+  }),
+    it('Repasse de informação ao componentes filhos', () => {
 
-    //expect(wrapper.findAll(Item)).toHaveLength(itemList.length)
-    expect(wrapper.findAll(Item)).toHaveLength(itemList.length)
-  })
+      items.wrappers.forEach((wrapper, i) => {
+        expect(wrapper.props().item).toEqual(itemList[i])
+      });
+    })
 
-    
 
-    
+
+
 
 
 
