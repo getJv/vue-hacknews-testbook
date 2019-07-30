@@ -10,7 +10,7 @@ import Item from "@/components/Item";
 import ProgressBar from "@/components/ProgressBar";
 export default {
   components: {
-    Item,
+    Item,  
     ProgressBar
   },
   data() {
