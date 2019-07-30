@@ -1,14 +1,17 @@
 <template>
   <div>
+    <ProgressBar/>
     <item v-for="item in itemList" :item="item" :key="item.url" />
   </div>
 </template>
 
 <script>
-import Item from "../components/Item.vue";
+import Item from "@/components/Item";
+import ProgressBar from "@/components/ProgressBar";
 export default {
   components: {
-    Item
+    Item,
+    ProgressBar
   },
   data() {
     return {
