@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProgressBar/>
+    <ProgressBar />
     <item v-for="item in itemList" :item="item" :key="item.url" />
   </div>
 </template>
@@ -10,9 +10,10 @@ import Item from "@/components/Item";
 import ProgressBar from "@/components/ProgressBar";
 export default {
   components: {
-    Item,  
+    Item,
     ProgressBar
   },
+  
   data() {
     return {
       itemList: [

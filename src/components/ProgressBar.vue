@@ -5,17 +5,19 @@
 export default {
   methods: {
     start() {
-      this.hidden   = false;
-      this.percent  = 0;
-      this.timer = setInterval(()=>{
-        this.percent++
-
-      },100)
+      this.hidden = false;
+      this.percent = 0;
+      this.timer = setInterval(() => {
+        this.percent++;
+        if (this.percent > 100) {
+          this.finish();
+        }
+      }, 100);
     },
     finish() {
-      this.hidden   = true;
-      this.percent  = 100;
-      clearInterval(this.timer)
+      this.hidden = true;
+      this.percent = 100;
+      clearInterval(this.timer);
     }
   },
   data() {
@@ -26,4 +28,13 @@ export default {
   }
 };
 </script>
+<style>
+.hidden{
+  display:none;
+}
+.barra{
+  border: 2px solid red;
+}
+</style>
+
 
