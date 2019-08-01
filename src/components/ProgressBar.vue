@@ -9,9 +9,9 @@ export default {
       this.percent = 0;
       this.timer = setInterval(() => {
         this.percent++;
-        if (this.percent > 100) {
+        /* if (this.percent > 100) {
           this.finish();
-        }
+        } */
       }, 100);
     },
     finish() {

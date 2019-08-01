@@ -1,19 +1,15 @@
 <template>
   <div>
-    <ProgressBar />
     <item v-for="item in itemList" :item="item" :key="item.url" />
   </div>
 </template>
-
 <script>
 import Item from "@/components/Item";
-import ProgressBar from "@/components/ProgressBar";
 export default {
   components: {
-    Item,
-    ProgressBar
+    Item
   },
-  
+
   data() {
     return {
       itemList: [
@@ -30,7 +26,7 @@ export default {
           title: "Saudoso site de Buscas"
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

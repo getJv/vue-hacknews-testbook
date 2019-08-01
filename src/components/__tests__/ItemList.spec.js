@@ -2,6 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import Item from '@/components/Item'
 import ItemList from '@/views/ItemList'
 
+
 describe('ItemList.vue', () => {
 
   const itemList = [
@@ -18,7 +19,20 @@ describe('ItemList.vue', () => {
     }
   ]
 
-  const wrapper = shallowMount(ItemList)
+  const $bar = {
+    start: jest.fn(),
+    finish: jest.fn()
+  }
+
+  const wrapper = shallowMount(ItemList, {
+    mocks: {
+      $bar
+    },
+    beforeMount(){
+      this.$bar.start()
+    }
+  })
+
   const items = wrapper.findAll(Item)
 
   it('Renderização de componentes filhos', () => {
@@ -29,6 +43,12 @@ describe('ItemList.vue', () => {
       items.wrappers.forEach((wrapper, i) => {
         expect(wrapper.props().item).toEqual(itemList[i])
       });
+    })
+    ,
+    it('Inicia a barra de carregamento no inicio', () => {
+
+        expect($bar.start).toHaveBeenCalledTimes(1) 
+
     })
 
 
